@@ -4,19 +4,24 @@
     <string name="app_name">WakeUp</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_login1">LoginActivity</string>
-    <string name="userName">userName</string>
+    <string name="userName">username</string>
     <string name="password">password</string>
     <string name="button_login">login</string>
     
-    <string name="button_callOther">Call Other</string>
-    <string name="button_callMe">Call Me</string>
+    <string name="button_callOther"> Call Other </string>
+    <string name="button_callMe">   Call Me  </string>
     <string name="User">User</string>
     <string name="Pass">Pass</string>
     <string name="sharedPref"> sharedPreferences </string>
     <string name="phoneNumber"> phone number </string>
     <color name="red">#FF6666</color>
-    <color name="blue">#6897BB</color>
+    <color name="blue">#b0e0e6</color>
     <color name="pink">#FFB6C1</color>
+    <color name="orange">#fdb938</color>
+    <color name="green">#dcfb66</color>
+    <string name="time">time</string>  
+    <string name="date">date</string>   
+    <string name="pattern">pattern</string>   
     
    
     <string name="title_activity_main">MainActivity</string>

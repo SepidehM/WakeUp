@@ -19,6 +19,8 @@ public class Login1Activity extends ActionBarActivity {
 	String[] value;
 	SharedPreferences sharedPref ;
 	public static String PREFS_NAME = "MyPrefsFile";
+	final static String keyUser="userName";
+	final static String keyPass="password";
 	
 	//public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 	@Override
@@ -27,12 +29,12 @@ public class Login1Activity extends ActionBarActivity {
 		
 		setContentView(R.layout.activity_login1);
 		
-		EditText User = (EditText) findViewById(R.id.userName);
+		final EditText User = (EditText) findViewById(R.id.userName);
 		final EditText password = (EditText) findViewById(R.id.password);
 		
-		sharedPref =this.getSharedPreferences(getString(R.string.sharedPref), Context.MODE_PRIVATE);
-		String user = sharedPref.getString("userName", "");
-		String pass = sharedPref.getString("password", "");
+		sharedPref = getSharedPreferences(getString(R.string.sharedPref), Context.MODE_PRIVATE);
+		String user = sharedPref.getString(keyUser, "");
+		String pass = sharedPref.getString(keyPass, "");
 
 		//if(user!="" && pass!=""){
 			User.setText(user);
@@ -43,10 +45,6 @@ public class Login1Activity extends ActionBarActivity {
 		
 		value = new String[2];
 		
-		
-		password.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
-		
-	
 	    
 		value[1] = User.getText().toString();
 		value[0] = password.getText().toString();
@@ -64,10 +62,10 @@ public class Login1Activity extends ActionBarActivity {
 			    
 			    //.putExtra("user", value[0]);
 			    //intent.putExtra("password", value[1]);
-				 
+				 sharedPref =getSharedPreferences(getString(R.string.sharedPref), Context.MODE_PRIVATE);
 				 SharedPreferences.Editor editor = sharedPref.edit();
-				 editor.putString("userName", value[0]);
-				 editor.putString("password", value[1]);
+				 editor.putString(keyUser, value[0]);
+				 editor.putString(keyPass, value[1]);
 				 editor.commit();
 				
 			    startActivity(intent);
